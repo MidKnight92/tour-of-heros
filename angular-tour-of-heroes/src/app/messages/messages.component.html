@@ -1,0 +1,7 @@
+<div *ngIf="messages | async as messageList">
+    <ng-container *ngIf="messageList.length">
+        <h2>Messages</h2>
+        <button type="button" class="clear" (click)="clearMessages()">Clear Messages</button>
+        <div *ngFor="let message of messageList">{{message}}</div>       
+    </ng-container>
+</div>
