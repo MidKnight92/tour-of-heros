@@ -12,8 +12,9 @@ export class MessageService {
     this.messages.push(newMessage);
   }
 
-  public clear(){
-    this.messages = [];
+  public clear(): Observable<string[]>{
+    this.messages = []
+    return of(this.messages);
   }
 
   public getMessages(): Observable<string[]> {
