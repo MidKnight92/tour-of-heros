@@ -10,13 +10,8 @@ import { Observable, of } from 'rxjs';
 })
 export class HeroesComponent implements OnInit {
   public heroes: Observable<Hero[]> = of([]);
-  public selectedHero?: Hero; 
 
   constructor(private heroService: HeroService){}
-
-  public onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
 
   public ngOnInit(): void {
     this.heroes = this.heroService.getHeroes();
